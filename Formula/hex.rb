@@ -1,5 +1,5 @@
 class Hex < Formula
-  desc "Futuristic take on hexdump"
+  desc "A Futuristic take on hexdump"
   homepage "https://github.com/sitkevij/hex"
   url "https://github.com/sitkevij/hex/archive/refs/tags/v0.4.2.tar.gz"
   sha256 "a7cc1ece337fc19e77fbbbca145001bc5d447bde4118eb6de2c99407eb1a3b74"
@@ -20,6 +20,12 @@ class Hex < Formula
 
   def install
     system "cargo", "install", *std_cargo_args
+    
+    args = %w[
+      --to=man
+    ]
+    system "pandoc", *args, "man/hx.1.md", "-o", "hx.1"
+    man1.install "hx.1"
   end
 
   test do
