@@ -1,8 +1,8 @@
 class Picoclaw < Formula
   desc "Ultra-efficient personal AI assistant in Go"
   homepage "https://picoclaw.io/"
-  url "https://github.com/sipeed/picoclaw/archive/refs/tags/v0.1.2.tar.gz"
-  sha256 "973faa529b144954a2a8d2212b80895641676ff0736c1488d0ad1fd70793fe53"
+  url "https://github.com/sipeed/picoclaw/archive/refs/tags/v0.2.0.tar.gz"
+  sha256 "2b24db59ee2798d07ee9ad931826e9f7550f6bb8b0e0fd48dec20730e37d51d3"
   license "MIT"
   head "https://github.com/sipeed/picoclaw.git", branch: "main"
 
@@ -18,9 +18,9 @@ class Picoclaw < Formula
   depends_on "go" => :build
 
   def install
-    system "go", "generate", "./cmd/picoclaw"
+    system "go", "generate", "./cmd/picoclaw/internal/onboard"
 
-    ldflags = "-s -w -X main.version=#{version}"
+    ldflags = "-s -w -X github.com/sipeed/picoclaw/cmd/picoclaw/internal.version=#{version}"
     system "go", "build", *std_go_args(ldflags:), "./cmd/picoclaw"
   end
 
