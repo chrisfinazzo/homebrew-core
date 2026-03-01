@@ -1,8 +1,8 @@
 class Television < Formula
   desc "General purpose fuzzy finder TUI"
   homepage "https://github.com/alexpasmantier/television"
-  url "https://github.com/alexpasmantier/television/archive/refs/tags/0.15.2.tar.gz"
-  sha256 "36c97916d7062025697e6268992985e0e7c7f0b458230faaca3735d09c911cca"
+  url "https://github.com/alexpasmantier/television/archive/refs/tags/0.15.3.tar.gz"
+  sha256 "5097343a03ed140ef643e5dfcceb48a77f9c372dbd3d043d523e25f9c4016deb"
   license "MIT"
   head "https://github.com/alexpasmantier/television.git", branch: "main"
 
