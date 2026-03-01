@@ -1,8 +1,8 @@
 class DomainCheck < Formula
   desc "CLI tool for checking domain availability using RDAP and WHOIS protocols"
   homepage "https://github.com/saidutt46/domain-check"
-  url "https://github.com/saidutt46/domain-check/archive/refs/tags/v0.9.1.tar.gz"
-  sha256 "0d105c79c0864ab7dc6eab3ed13e41c53344ce42bf538892123bad38396b2b10"
+  url "https://github.com/saidutt46/domain-check/archive/refs/tags/v1.0.0.tar.gz"
+  sha256 "6257c1e09bf9e291bb27c4f0cfe0461e49b77792b749d58ce4bbd87f246b12df"
   license "Apache-2.0"
   head "https://github.com/saidutt46/domain-check.git", branch: "main"
 
