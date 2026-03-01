@@ -1,8 +1,8 @@
 class Cake < Formula
   desc "Cross platform build automation system with a C# DSL"
   homepage "https://cakebuild.net/"
-  url "https://github.com/cake-build/cake/archive/refs/tags/v6.0.0.tar.gz"
-  sha256 "cdfe2444b684d595c1f8644828b244540402c8ee09f6fef6db1e20eb3d933617"
+  url "https://github.com/cake-build/cake/archive/refs/tags/v6.1.0.tar.gz"
+  sha256 "90c172d5ca8bd3b274cb7cbadca0a4de7f627663f2915c3ac33fe99ae7937f0d"
   license "MIT"
 
   bottle do
@@ -48,6 +48,6 @@ class Cake < Formula
 
       RunTarget ("info");
     EOS
-    assert_match "Hello Homebrew\n", shell_output("#{bin}/cake build.cake")
+    assert_match "Hello Homebrew", shell_output("#{bin}/cake build.cake")
   end
 end
