@@ -2,7 +2,7 @@ class Librdkafka < Formula
   desc "Apache Kafka C/C++ library"
   homepage "https://github.com/confluentinc/librdkafka"
   url "https://github.com/confluentinc/librdkafka/archive/refs/tags/v2.13.0.tar.gz"
-  sha256 "ac44ed450ccd2c4ab4cdeba70115e6f878d794d6df3e61c9f47902f766852058"
+  sha256 "3bd351601d8ebcbc99b9a1316cae1b83b00edbcf9411c34287edf1791c507600"
   license "BSD-2-Clause"
   head "https://github.com/confluentinc/librdkafka.git", branch: "master"
 
@@ -29,7 +29,10 @@ class Librdkafka < Formula
   uses_from_macos "python" => :build
   uses_from_macos "curl"
   uses_from_macos "cyrus-sasl"
-  uses_from_macos "zlib"
+
+  on_linux do
+    depends_on "zlib-ng-compat"
+  end
 
   def install
     system "./configure", "--prefix=#{prefix}"
