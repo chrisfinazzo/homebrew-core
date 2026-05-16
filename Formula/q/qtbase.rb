@@ -1,6 +1,10 @@
 class Qtbase < Formula
   desc "Cross-platform application and UI framework"
   homepage "https://www.qt.io/"
+  url "https://download.qt.io/official_releases/qt/6.11/6.11.1/submodules/qtbase-everywhere-src-6.11.1.tar.xz"
+  mirror "https://qt.mirror.constant.com/archive/qt/6.11/6.11.1/submodules/qtbase-everywhere-src-6.11.1.tar.xz"
+  mirror "https://mirrors.ukfast.co.uk/sites/qt.io/archive/qt/6.11/6.11.1/submodules/qtbase-everywhere-src-6.11.1.tar.xz"
+  sha256 "d9594a31228aa23ad6b531719a29b45f0f3989fe6c136d45767ea179f233c1ac"
   license all_of: [
     { any_of: ["LGPL-3.0-only", "GPL-2.0-only", "GPL-3.0-only"] },
     { "GPL-3.0-only" => { with: "Qt-GPL-exception-1.0" } }, # qmake
@@ -9,19 +13,6 @@ class Qtbase < Formula
   ]
   compatibility_version 1
   head "https://code.qt.io/qt/qtbase.git", branch: "dev"
-
-  stable do
-    url "https://download.qt.io/official_releases/qt/6.11/6.11.0/submodules/qtbase-everywhere-src-6.11.0.tar.xz"
-    mirror "https://qt.mirror.constant.com/archive/qt/6.11/6.11.0/submodules/qtbase-everywhere-src-6.11.0.tar.xz"
-    mirror "https://mirrors.ukfast.co.uk/sites/qt.io/archive/qt/6.11/6.11.0/submodules/qtbase-everywhere-src-6.11.0.tar.xz"
-    sha256 "231ad85979864d914dc9568a1b71c91d6cf20d7b2021d059103bf0eb51cb755e"
-
-    # Backport fix for Xcode 26.4
-    patch do
-      url "https://github.com/qt/qtbase/commit/a76004f16fdc43e1b7af83bfdf3f1a613491b234.patch?full_index=1"
-      sha256 "9cdc1d6cd9f62f79d1858588569d253eba4e96a86f3f2666304c87406fc05cbb"
-    end
-  end
 
   # The first-party website doesn't make version information readily available,
   # so we check the `head` repository tags instead.
