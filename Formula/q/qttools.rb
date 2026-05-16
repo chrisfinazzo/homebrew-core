@@ -1,6 +1,10 @@
 class Qttools < Formula
   desc "Facilitate the design, development, testing and deployment of applications"
   homepage "https://www.qt.io/"
+  url "https://download.qt.io/official_releases/qt/6.11/6.11.1/submodules/qttools-everywhere-src-6.11.1.tar.xz"
+  mirror "https://qt.mirror.constant.com/archive/qt/6.11/6.11.1/submodules/qttools-everywhere-src-6.11.1.tar.xz"
+  mirror "https://mirrors.ukfast.co.uk/sites/qt.io/archive/qt/6.11/6.11.1/submodules/qttools-everywhere-src-6.11.1.tar.xz"
+  sha256 "8e61835a679c93fa9c6065b142353c2071ba68e297898937c32a03777fcaf50d"
   license all_of: [
     { any_of: ["LGPL-3.0-only", "GPL-2.0-only", "GPL-3.0-only"] },
     { "GPL-3.0-only" => { with: "Qt-GPL-exception-1.0" } },
@@ -8,19 +12,6 @@ class Qttools < Formula
     "BSL-1.0", # bundled catch2
   ]
   head "https://code.qt.io/qt/qttools.git", branch: "dev"
-
-  stable do
-    url "https://download.qt.io/official_releases/qt/6.11/6.11.0/submodules/qttools-everywhere-src-6.11.0.tar.xz"
-    mirror "https://qt.mirror.constant.com/archive/qt/6.11/6.11.0/submodules/qttools-everywhere-src-6.11.0.tar.xz"
-    mirror "https://mirrors.ukfast.co.uk/sites/qt.io/archive/qt/6.11/6.11.0/submodules/qttools-everywhere-src-6.11.0.tar.xz"
-    sha256 "cfb1993d7a10848965b01b9cf33a54b8a4ba4e5e3a6d28d59483e73f10d9fc76"
-
-    # Backport fix for build on Linux
-    patch do
-      url "https://github.com/qt/qttools/commit/b676278a24eb880eeeed35bbf203a76950a9ab4e.patch?full_index=1"
-      sha256 "36740336b401055ca1699787921d474377ec65f0b041351141b158b9ced7ef42"
-    end
-  end
 
   livecheck do
     formula "qtbase"
