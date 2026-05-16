@@ -1,8 +1,8 @@
 class Bde < Formula
   desc "Basic Development Environment: foundational C++ libraries used at Bloomberg"
   homepage "https://github.com/bloomberg/bde"
-  url "https://github.com/bloomberg/bde/archive/refs/tags/4.37.0.0.tar.gz"
-  sha256 "28dfdf953f3a6864bd7b1fc97cda7ab47ef6949e4c052a1f4adcfa469a4f5021"
+  url "https://github.com/bloomberg/bde/archive/refs/tags/4.38.0.0.tar.gz"
+  sha256 "0a8eba6db1a643208f91d3c806bd51a3e7bf6f77ad7c58c200097d4dd961d323"
   license "Apache-2.0"
 
   livecheck do
@@ -25,8 +25,8 @@ class Bde < Formula
   depends_on "pcre2"
 
   resource "bde-tools" do
-    url "https://github.com/bloomberg/bde-tools/archive/refs/tags/4.37.0.0.tar.gz"
-    sha256 "37c0ad6fef5a7f4374005cf7a5310b05380b638b7cec62f4179b6545798ac5f7"
+    url "https://github.com/bloomberg/bde-tools/archive/refs/tags/4.38.0.0.tar.gz"
+    sha256 "7796f2db05ef009f4ee7c036c4c5861bc12a45dc39f5b9539bd53794f6a1e783"
 
     livecheck do
       regex(/^v?(\d+\.\d+\.\d+\.\d+)$/i)
@@ -46,6 +46,8 @@ class Bde < Formula
       -DBdeBuildSystem_DIR=#{buildpath}/bde-tools/BdeBuildSystem/
       -DCMAKE_INSTALL_RPATH=#{rpath}
       -DPython3_EXECUTABLE=#{which("python3.14")}
+      -DCMAKE_CXX_STANDARD=17
+      -DCMAKE_CXX_FLAGS=-fsized-deallocation
     ]
 
     system "cmake", "-S", ".", "-B", "build", *args, *std_cmake_args
@@ -65,7 +67,7 @@ class Bde < Formula
         return 0;
       }
     CPP
-    system ENV.cxx, "-I#{include}", "test.cpp", "-L#{lib}", "-lbsl", "-o", "test"
+    system ENV.cxx, "test.cpp", "-o", "test", "-std=c++17", "-I#{include}", "-L#{lib}", "-lbsl"
     system "./test"
   end
 end
