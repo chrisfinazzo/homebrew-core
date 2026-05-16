@@ -1,10 +1,10 @@
 class Qtserialport < Formula
   desc "Provides classes to interact with hardware and virtual serial ports"
   homepage "https://www.qt.io/"
-  url "https://download.qt.io/official_releases/qt/6.11/6.11.0/submodules/qtserialport-everywhere-src-6.11.0.tar.xz"
-  mirror "https://qt.mirror.constant.com/archive/qt/6.11/6.11.0/submodules/qtserialport-everywhere-src-6.11.0.tar.xz"
-  mirror "https://mirrors.ukfast.co.uk/sites/qt.io/archive/qt/6.11/6.11.0/submodules/qtserialport-everywhere-src-6.11.0.tar.xz"
-  sha256 "264692b7eb7e5d0056249d7b2193ded10d90d90b50e00430748e5570d4ae3784"
+  url "https://download.qt.io/official_releases/qt/6.11/6.11.1/submodules/qtserialport-everywhere-src-6.11.1.tar.xz"
+  mirror "https://qt.mirror.constant.com/archive/qt/6.11/6.11.1/submodules/qtserialport-everywhere-src-6.11.1.tar.xz"
+  mirror "https://mirrors.ukfast.co.uk/sites/qt.io/archive/qt/6.11/6.11.1/submodules/qtserialport-everywhere-src-6.11.1.tar.xz"
+  sha256 "9af31a898ffd9a7e4faf6fed845d29e783c716885789055cbe319f3e072d3974"
   license all_of: [
     { any_of: ["LGPL-3.0-only", "GPL-2.0-only", "GPL-3.0-only"] },
     "BSD-3-Clause", # *.cmake
