@@ -3,10 +3,10 @@ class Qtwebengine < Formula
 
   desc "Provides functionality for rendering regions of dynamic web content"
   homepage "https://www.qt.io/"
-  url "https://download.qt.io/official_releases/qt/6.11/6.11.0/submodules/qtwebengine-everywhere-src-6.11.0.tar.xz"
-  mirror "https://qt.mirror.constant.com/archive/qt/6.11/6.11.0/submodules/qtwebengine-everywhere-src-6.11.0.tar.xz"
-  mirror "https://mirrors.ukfast.co.uk/sites/qt.io/archive/qt/6.11/6.11.0/submodules/qtwebengine-everywhere-src-6.11.0.tar.xz"
-  sha256 "63b921c8b2dd59152ced9a796676010166df044588ee00ef9429dc2fd2146736"
+  url "https://download.qt.io/official_releases/qt/6.11/6.11.1/submodules/qtwebengine-everywhere-src-6.11.1.tar.xz"
+  mirror "https://qt.mirror.constant.com/archive/qt/6.11/6.11.1/submodules/qtwebengine-everywhere-src-6.11.1.tar.xz"
+  mirror "https://mirrors.ukfast.co.uk/sites/qt.io/archive/qt/6.11/6.11.1/submodules/qtwebengine-everywhere-src-6.11.1.tar.xz"
+  sha256 "679c66ccc6c158fc215e9c58ef160331ecd29974232e345c05161889f8667083"
   license all_of: [
     { any_of: ["LGPL-3.0-only", "GPL-2.0-only", "GPL-3.0-only"] },
     { "GPL-3.0-only" => { with: "Qt-GPL-exception-1.0" } }, # qwebengine_convert_dict; QtWebEngineProcess
