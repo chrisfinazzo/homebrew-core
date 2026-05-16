@@ -1,10 +1,10 @@
 class Qtremoteobjects < Formula
   desc "Provides APIs for inter-process communication"
   homepage "https://www.qt.io/"
-  url "https://download.qt.io/official_releases/qt/6.11/6.11.0/submodules/qtremoteobjects-everywhere-src-6.11.0.tar.xz"
-  mirror "https://qt.mirror.constant.com/archive/qt/6.11/6.11.0/submodules/qtremoteobjects-everywhere-src-6.11.0.tar.xz"
-  mirror "https://mirrors.ukfast.co.uk/sites/qt.io/archive/qt/6.11/6.11.0/submodules/qtremoteobjects-everywhere-src-6.11.0.tar.xz"
-  sha256 "e19420aae8f142c7ba9c9d91d78040713bfe0e17c96ef9a813db30dcd59ade97"
+  url "https://download.qt.io/official_releases/qt/6.11/6.11.1/submodules/qtremoteobjects-everywhere-src-6.11.1.tar.xz"
+  mirror "https://qt.mirror.constant.com/archive/qt/6.11/6.11.1/submodules/qtremoteobjects-everywhere-src-6.11.1.tar.xz"
+  mirror "https://mirrors.ukfast.co.uk/sites/qt.io/archive/qt/6.11/6.11.1/submodules/qtremoteobjects-everywhere-src-6.11.1.tar.xz"
+  sha256 "40629895c69531a687a9c0258316cee3f04c2d18b2bf2ad36dc83e76a58f111a"
   license all_of: [
     { any_of: ["LGPL-3.0-only", "GPL-2.0-only", "GPL-3.0-only"] },
     { "GPL-3.0-only" => { with: "Qt-GPL-exception-1.0" } }, # repc
