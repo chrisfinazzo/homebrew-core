@@ -1,10 +1,10 @@
 class Qtquick3d < Formula
   desc "Provides a high-level API for creating 3D content or UIs based on Qt Quick"
   homepage "https://www.qt.io/"
-  url "https://download.qt.io/official_releases/qt/6.11/6.11.0/submodules/qtquick3d-everywhere-src-6.11.0.tar.xz"
-  mirror "https://qt.mirror.constant.com/archive/qt/6.11/6.11.0/submodules/qtquick3d-everywhere-src-6.11.0.tar.xz"
-  mirror "https://mirrors.ukfast.co.uk/sites/qt.io/archive/qt/6.11/6.11.0/submodules/qtquick3d-everywhere-src-6.11.0.tar.xz"
-  sha256 "b42000bb33e55b6c642657eb7022ee1f74f9e19cf64d52e85d41763f567b8994"
+  url "https://download.qt.io/official_releases/qt/6.11/6.11.1/submodules/qtquick3d-everywhere-src-6.11.1.tar.xz"
+  mirror "https://qt.mirror.constant.com/archive/qt/6.11/6.11.1/submodules/qtquick3d-everywhere-src-6.11.1.tar.xz"
+  mirror "https://mirrors.ukfast.co.uk/sites/qt.io/archive/qt/6.11/6.11.1/submodules/qtquick3d-everywhere-src-6.11.1.tar.xz"
+  sha256 "c76b85de3f8aa2a4bee64987acfef560675c1b378b92076c7c6264613e5b456f"
   license all_of: [
     "GPL-3.0-only",
     { "GPL-3.0-only" => { with: "Qt-GPL-exception-1.0" } },
@@ -42,13 +42,6 @@ class Qtquick3d < Formula
   on_linux do
     depends_on "mesa"
     depends_on "zlib-ng-compat"
-  end
-
-  # Apply Arch Linux patches for assimp 6 support
-  # Issue ref: https://bugreports.qt.io/browse/QTBUG-137996
-  patch do
-    url "https://gitlab.archlinux.org/archlinux/packaging/packages/qt6-quick3d/-/raw/547cb929d0a03fdf817fdf2655629bcb9b75505d/assimp-6.patch"
-    sha256 "394b5f26877477c4ceba252c06a6a2101f5e99e3dddc01cc8831e7fa7d70f797"
   end
 
   def install
