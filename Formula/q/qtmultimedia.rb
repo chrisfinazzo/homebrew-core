@@ -1,10 +1,10 @@
 class Qtmultimedia < Formula
   desc "Provides APIs for playing back and recording audiovisual content"
   homepage "https://www.qt.io/"
-  url "https://download.qt.io/official_releases/qt/6.11/6.11.0/submodules/qtmultimedia-everywhere-src-6.11.0.tar.xz"
-  mirror "https://qt.mirror.constant.com/archive/qt/6.11/6.11.0/submodules/qtmultimedia-everywhere-src-6.11.0.tar.xz"
-  mirror "https://mirrors.ukfast.co.uk/sites/qt.io/archive/qt/6.11/6.11.0/submodules/qtmultimedia-everywhere-src-6.11.0.tar.xz"
-  sha256 "90c4cac0a7a983b68d1b0873d0714e7873b9a493403fa8593e8a4eea3ea26040"
+  url "https://download.qt.io/official_releases/qt/6.11/6.11.1/submodules/qtmultimedia-everywhere-src-6.11.1.tar.xz"
+  mirror "https://qt.mirror.constant.com/archive/qt/6.11/6.11.1/submodules/qtmultimedia-everywhere-src-6.11.1.tar.xz"
+  mirror "https://mirrors.ukfast.co.uk/sites/qt.io/archive/qt/6.11/6.11.1/submodules/qtmultimedia-everywhere-src-6.11.1.tar.xz"
+  sha256 "390f8e52ddee3aca5c4de7eead900c84c4fa61ff6d1f0ebea9c7543365c09b0a"
   license all_of: [
     { any_of: ["LGPL-3.0-only", "GPL-2.0-only", "GPL-3.0-only"] },
     { all_of: ["MPL-2.0", "BSD-3-Clause"] }, # bundled eigen
@@ -51,6 +51,7 @@ class Qtmultimedia < Formula
     depends_on "ffmpeg"
     depends_on "glib"
     depends_on "gstreamer"
+    depends_on "libva"
     depends_on "libx11"
     depends_on "libxext"
     depends_on "libxrandr"
