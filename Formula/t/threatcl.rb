@@ -1,8 +1,8 @@
 class Threatcl < Formula
   desc "Documenting your Threat Models with HCL"
   homepage "https://github.com/threatcl/threatcl"
-  url "https://github.com/threatcl/threatcl/archive/refs/tags/v0.4.8.tar.gz"
-  sha256 "579b32cea56838da7195cc8c0e9dabb54434f289c1634c9e4da7f4f877e775c8"
+  url "https://github.com/threatcl/threatcl/archive/refs/tags/v0.4.9.tar.gz"
+  sha256 "3ac811106b2f9430c36a61de96b8917d55a4f3607529de0f2e1f19dcbd70a888"
   license "MIT"
   head "https://github.com/threatcl/threatcl.git", branch: "main"
 
@@ -18,7 +18,7 @@ class Threatcl < Formula
   depends_on "go" => :build
 
   def install
-    ENV["CGO_ENABLED"] = "1"
+    ENV["CGO_ENABLED"] = "0"
 
     system "go", "build", *std_go_args(ldflags: "-s -w"), "./cmd/threatcl"
 
