@@ -1,8 +1,8 @@
 class CargoShear < Formula
   desc "Detect and remove unused dependencies from `Cargo.toml` in Rust projects"
   homepage "https://github.com/Boshen/cargo-shear"
-  url "https://github.com/Boshen/cargo-shear/archive/refs/tags/v1.12.1.tar.gz"
-  sha256 "73e9c54f13725e00228e43babd88b60880cd477fcd2197918afc2a4e423611ca"
+  url "https://github.com/Boshen/cargo-shear/archive/refs/tags/v1.12.2.tar.gz"
+  sha256 "9997f482d936f12a1edb09aa682e3b6ec1d4ca42c1735530a74451eaf05d821f"
   license "MIT"
   head "https://github.com/Boshen/cargo-shear.git", branch: "main"
 
