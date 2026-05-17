@@ -7,12 +7,12 @@ class Chawan < Formula
   head "https://git.sr.ht/~bptato/chawan", branch: "master"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "90360e8b7da49b4271a5b0e6cfc783fa0c74828cc9f13192642f2814b173e187"
-    sha256 cellar: :any,                 arm64_sequoia: "badfd78d8b446524beafd88668ff9fd5cdfffdd378f693a49635505c76f878d0"
-    sha256 cellar: :any,                 arm64_sonoma:  "42718595d114ce89567fcafd5460fa929fe432bbab899ce33fcbd9fab8917719"
-    sha256 cellar: :any,                 sonoma:        "d74463206c96e4fed9e95878d3cde9a748a181c40b526a608a747218cbb0e129"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "0034327f3c9aa289cb2bcb96df0aea048f5b32ffc3e4c87ce5cbffdda2dffd89"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "f746919e0b1b5957d148061e859fc8267fd700b0c989b8d719ac23f20ca7b26f"
+    sha256 cellar: :any,                 arm64_tahoe:   "564019706565b2bca0bcaeffba3ed98f2167eaf2c079b438cee05a91187dcf80"
+    sha256 cellar: :any,                 arm64_sequoia: "589bb8abec15e9d05f9061b13a25a4f1628944105fd222504d3a8520f94f4ec7"
+    sha256 cellar: :any,                 arm64_sonoma:  "c3e4e3c3e7b3a2eb2701d694712453429c707c4eae6d88f478ce02d798a69b7a"
+    sha256 cellar: :any,                 sonoma:        "f5a53d15dec9429facb9758e02405ff972f2739a4275de62cdcb77f5120e5ff2"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "8b57fc1887cb6ef4da854cc0cd6c73eac8d2a5c9a287b1c9ce7331ab0c63b1c0"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "84387de14abf7f5964e59f809872d936b1b80720b6a4f1e7d4cc84fbc283ac2e"
   end
 
   depends_on "nim" => :build
