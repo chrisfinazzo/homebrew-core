@@ -1,8 +1,8 @@
 class ClockRs < Formula
   desc "Modern, digital clock that effortlessly runs in your terminal"
   homepage "https://github.com/Oughie/clock-rs"
-  url "https://github.com/Oughie/clock-rs/archive/refs/tags/0.2.0.tar.gz"
-  sha256 "9770f5d79408032d635a0eabe2cc70575b0238d8a02c9b5193dc5712a14b8e2d"
+  url "https://github.com/Oughie/clock-rs/archive/refs/tags/v0.2.1.tar.gz"
+  sha256 "cb344326f7ed45eb252d74d27d35cddf61b8df9566e60f25e129da696e083344"
   license "Apache-2.0"
   head "https://github.com/Oughie/clock-rs.git", branch: "main"
 
