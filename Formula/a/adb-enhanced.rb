@@ -3,8 +3,8 @@ class AdbEnhanced < Formula
 
   desc "Swiss-army knife for Android testing and development"
   homepage "https://ashishb.net/tech/introducing-adb-enhanced-a-swiss-army-knife-for-android-development/"
-  url "https://files.pythonhosted.org/packages/18/3e/8bf74e86f1821d190260e01b7a8efb615ad17f2e247c592df89740141cb5/adb_enhanced-2.8.0.tar.gz"
-  sha256 "75c92007bbf295ec97fb89fedf0bd24e6424d726b1343aa3b1fbf5e2115efcc5"
+  url "https://files.pythonhosted.org/packages/6e/97/03a20670350acfba7f8f65bba41123dbebca48a81600563181647c5bfdd0/adb_enhanced-2.9.0.tar.gz"
+  sha256 "ea81e5ab640c1a129e4362156ef5ff5b37bb62c1145acd77e259f8c582ea262b"
   license "Apache-2.0"
 
   bottle do
@@ -24,8 +24,8 @@ class AdbEnhanced < Formula
   end
 
   resource "psutil" do
-    url "https://files.pythonhosted.org/packages/73/cb/09e5184fb5fc0358d110fc3ca7f6b1d033800734d34cac10f4136cfac10e/psutil-7.2.1.tar.gz"
-    sha256 "f7583aec590485b43ca601dd9cea0dcd65bd7bb21d30ef4ddbf4ea6b5ed1bdd3"
+    url "https://files.pythonhosted.org/packages/aa/c6/d1ddf4abb55e93cebc4f2ed8b5d6dbad109ecb8d63748dd2b20ab5e57ebe/psutil-7.2.2.tar.gz"
+    sha256 "0746f5f8d406af344fd547f1c8daa5f5c33dbc293bb8d6a16d80b4bb88f59372"
   end
 
   def install
