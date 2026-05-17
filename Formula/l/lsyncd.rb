@@ -15,19 +15,30 @@ class Lsyncd < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "515ce4cedcf728c4b540bb488e2c15145bb6bce49c83370f82cbffdd9b5511bc"
   end
 
+  # https://github.com/lsyncd/lsyncd/issues/739
+  # https://github.com/lsyncd/lsyncd/commit/724f077864989b3a2d401be3f73880175236e88b
+  deprecate! date: "2026-05-17", because: :unmaintained
+  disable! date: "2027-05-17", because: :unmaintained
+
   depends_on "cmake" => :build
   depends_on "lua@5.4"
 
   resource "xnu" do
     # From https://opensource.apple.com/releases/
-    on_sequoia :or_newer do
+    on_tahoe :or_newer do # 26.4
+      url "https://github.com/apple-oss-distributions/xnu/archive/refs/tags/xnu-12377.101.15.tar.gz"
+      sha256 "4dbb9c7538107c0411c2d6bf9ef16af3fd465af36fab031f53e4f53329a42723"
+    end
+    on_sequoia do # 15.6
       url "https://github.com/apple-oss-distributions/xnu/archive/refs/tags/xnu-11417.140.69.tar.gz"
       sha256 "6ec42735d647976a429331cdc73a35e8f3889b56c251397c05989a59063dc251"
     end
-    on_sonoma do
+    on_sonoma do # 14.6
       url "https://github.com/apple-oss-distributions/xnu/archive/refs/tags/xnu-10063.141.1.tar.gz"
       sha256 "ffdc143cbf4c57dac48e7ad6367ab492c6c4180e5698cb2d68e87eaf1781bc48"
     end
+
+    # No longer maintained macOS versions so should not need updates
     on_ventura do
       url "https://github.com/apple-oss-distributions/xnu/archive/refs/tags/xnu-8796.141.3.tar.gz"
       sha256 "f08bfe045a1fb552a6cbf7450feae6a35dd003e9979edf71ea77d1a836c8dc99"
