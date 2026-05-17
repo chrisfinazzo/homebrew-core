@@ -11,6 +11,15 @@ class Lisette < Formula
     regex(/^lisette[._-]v?(\d+(?:\.\d+)+)$/i)
   end
 
+  bottle do
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "fc1d152e8754120175cbf7369c568dfb50244e6acc6ddac715e692fd60581308"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "623f0d86983b031944c9edf015f35d24d224f0789d29ca44f944ca1038083c41"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "6e1a5308fb4b02db2a45a531081446a4ba23053f1817c4fb840ad70e13790360"
+    sha256 cellar: :any_skip_relocation, sonoma:        "c93a41df58b5d9f554c9577861ee688849e87f869590bf6e82f3d292e29edb79"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "92c224abf58536b29e5b9820c151a722cc58bb8f55c72f60a8adafaa569c0e8a"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "454623168277af0a4deacf8de2c2101059d7e57ecf0173b0e9c38a768d2fa117"
+  end
+
   depends_on "rust" => :build
 
   def install
