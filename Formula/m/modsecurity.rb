@@ -19,7 +19,7 @@ class Modsecurity < Formula
   depends_on "libtool" => :build
   depends_on "pkgconf" => :build
   depends_on "libmaxminddb"
-  depends_on "lua@5.4"
+  depends_on "lua"
   depends_on "pcre2"
   depends_on "yajl"
 
