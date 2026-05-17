@@ -17,12 +17,12 @@ class Qtlottie < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "6fa4b26607522c18ca6a918aae74275a6da58515ee5e3cb431c818b6c7b673e2"
-    sha256 cellar: :any,                 arm64_sequoia: "2907d4a47571bc2954ace73473e4269fa21f07ca212ceb462e42e7bb2ca8f5dc"
-    sha256 cellar: :any,                 arm64_sonoma:  "00b2b19242b0232ca68c76ccd1cf029660a87958432bfc63d96b7feeb4eb35d0"
-    sha256 cellar: :any,                 sonoma:        "1c35f1c35e67b8f3c55cd55afc89d2e902d98a87a7007bf4fde4486464e438ec"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "c8874e2bc838ed5ec9d8047d29b28cb22a61992363c4c41b5e0fdd1391f31bff"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "946f8175cb32f6bcbc4e9f099df3ea20fda567f65d21039b53bf5d090212a08d"
+    sha256 cellar: :any,                 arm64_tahoe:   "730896d58afd137de7739ff4970bc06124a9779707ec405784b5772f4bc92d7a"
+    sha256 cellar: :any,                 arm64_sequoia: "0621e4a001ec9fcb67d795b39069cd9a956bd3a924fa56f20332ad0278f26fcf"
+    sha256 cellar: :any,                 arm64_sonoma:  "360ef45ec99d46f36266a0ad786564440fe91c88277234c1f31a88acae304f18"
+    sha256 cellar: :any,                 sonoma:        "57e66e7918c7357a5d08b827007c3187f8fb2a042200357ebb087893bc086a65"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "5f9ceaa8eff6c6032ce1f23640f3adc2a32ba7a7578247a638d24e880b296d4e"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "4e56dd5a703300282cd4f3e3f7d2893e41c0dcdb32aedb0222c39ce76444e3ed"
   end
 
   depends_on "cmake" => [:build, :test]
