@@ -1,8 +1,8 @@
 class TfstateLookup < Formula
   desc "Lookup resource attributes in tfstate"
   homepage "https://github.com/fujiwara/tfstate-lookup"
-  url "https://github.com/fujiwara/tfstate-lookup/archive/refs/tags/v1.12.0.tar.gz"
-  sha256 "0caf56d6f9b7c7ef489304c865c22405216273d91e97dcda4ae2c140b3d8b439"
+  url "https://github.com/fujiwara/tfstate-lookup/archive/refs/tags/v1.12.1.tar.gz"
+  sha256 "d01dc5ca5193fd38696fcee0b8fd3f7211f9f12fdfefa46403a6159b9d677fa7"
   license "MPL-2.0"
 
   bottle do
