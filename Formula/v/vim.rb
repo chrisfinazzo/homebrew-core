@@ -35,13 +35,13 @@ class Vim < Formula
   end
 
   depends_on "gettext" => :build
+  depends_on "lua" => [:build, :test]
+  depends_on "python@3.14" => [:build, :test]
+  depends_on "ruby" => [:build, :test]
   depends_on "libsodium"
-  depends_on "lua@5.4" # Lua 5.5 doesn't work for now, see https://github.com/vim/vim/issues/19639
   depends_on "ncurses"
-  depends_on "python@3.14"
-  depends_on "ruby"
 
-  uses_from_macos "perl"
+  uses_from_macos "perl" => [:build, :test]
 
   on_macos do
     depends_on "gettext"
@@ -54,16 +54,19 @@ class Vim < Formula
   conflicts_with "ex-vi", because: "vim and ex-vi both install bin/ex and bin/view"
   conflicts_with "macvim", because: "vim and macvim both install vi* binaries"
 
+  def extra_deps = deps.select { |dep| dep.build? && dep.test? }
+
   def install
     ENV.prepend_path "PATH", Formula["python@3.14"].opt_libexec/"bin"
 
-    # https://github.com/Homebrew/homebrew-core/pull/1046
-    ENV.delete("SDKROOT")
-
-    # vim doesn't require any Python package, unset PYTHONPATH.
-    ENV.delete("PYTHONPATH")
-
     ENV.append_to_cflags "-mllvm -enable-constraint-elimination=0" if DevelopmentTools.clang_build_version == 1600
+
+    # Allow dynamically loading formulae libraries when not linked
+    extra_deps.each do |dep|
+      extra_rpath = dep.to_formula.opt_lib
+      extra_rpath = rpath(target: extra_rpath) if OS.mac? # cannot use $ORIGIN
+      ENV.append "LDFLAGS", "-Wl,-rpath,#{extra_rpath}"
+    end
 
     # We specify HOMEBREW_PREFIX as the prefix to make vim look in the
     # the right place (HOMEBREW_PREFIX/share/vim/{vimrc,vimfiles}) for
@@ -78,13 +81,13 @@ class Vim < Formula
                           "--with-compiledby=Homebrew",
                           "--enable-cscope",
                           "--enable-terminal",
-                          "--enable-perlinterp",
-                          "--enable-rubyinterp",
-                          "--enable-python3interp",
+                          "--enable-perlinterp#{"=dynamic" unless OS.mac?}",
+                          "--enable-python3interp=dynamic",
+                          "--enable-rubyinterp=dynamic",
                           "--disable-gui",
                           "--without-x",
-                          "--enable-luainterp",
-                          "--with-lua-prefix=#{Formula["lua@5.4"].opt_prefix}"
+                          "--enable-luainterp=dynamic",
+                          "--with-lua-prefix=#{Formula["lua"].opt_prefix}"
     system "make"
     # Parallel install could miss some symlinks
     # https://github.com/vim/vim/issues/1031
@@ -96,13 +99,20 @@ class Vim < Formula
     bin.install_symlink "vim" => "vi"
   end
 
+  def caveats
+    "Additional features can be enabled by installing: #{extra_deps.map(&:name).join(", ")}"
+  end
+
   test do
     (testpath/"commands.vim").write <<~VIM
       :python3 import vim; vim.current.buffer[0] = 'hello python3'
+      :ruby Vim::Buffer.current.append(0, 'hello ruby')
+      :perl $curbuf->Append(0, "hello perl")
+      :lua vim.buffer():insert("hello lua")
       :wq
     VIM
     system bin/"vim", "-T", "dumb", "-s", "commands.vim", "test.txt"
-    assert_equal "hello python3", File.read("test.txt").chomp
+    assert_equal "hello perl\nhello ruby\nhello python3\nhello lua", File.read("test.txt").chomp
     assert_match "+gettext", shell_output("#{bin}/vim --version")
     assert_match "+sodium", shell_output("#{bin}/vim --version")
   end
