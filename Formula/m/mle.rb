@@ -6,12 +6,13 @@ class Mle < Formula
   license "Apache-2.0"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "306e6cdc4f433ef963be6385bfce249743c0ded11def9172985fd6882eb55633"
-    sha256 cellar: :any,                 arm64_sequoia: "0dc72aa256f0a8e5f65f502e8c175d5e0d8b0d5a48348716a377847734a61ae4"
-    sha256 cellar: :any,                 arm64_sonoma:  "e7ba6fbd35d12b9a52b61eab18eb684d4814a7dbcf70271dd246feb2514fbe1d"
-    sha256 cellar: :any,                 sonoma:        "1c7ef3254e6d91bf71a34ea33c1a77678ae8e696044c706dd7fd6037c6a48bfa"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "3b0dbffe4e55c0849d4938508f6cf86d8efea3bdf6583999467ab0c44611cec5"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "9fad439343aa7dd03abf599f9e7cc924d098a4d3d14b8fb430eaf497b930cb7a"
+    rebuild 1
+    sha256 cellar: :any,                 arm64_tahoe:   "d1fca3abdacc62e424b44f3c6b1fd986636ed1db3b4665ab66c26127e36bfd5e"
+    sha256 cellar: :any,                 arm64_sequoia: "404813ee668f4f176f9ca668a77f6b2aef7247e40c4ca154178c8fff5862bc4b"
+    sha256 cellar: :any,                 arm64_sonoma:  "fc3b0341e86f538ab1a0790e8df3bf195e91036889ec84a83788547d13dce1d7"
+    sha256 cellar: :any,                 sonoma:        "472c405e8d10a960e1414c44a5375a0e23c8e173e48b57147134cf5d20c8e881"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "ba4b8a00e82b00b0be6f1362b7b3a9c757fe5d912894b3b35a4bef0ad81f8548"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "cec050c18c9439ec0a9505ef0c95649c88432ae8fe095f5ecfc53848ee27492c"
   end
 
   depends_on "uthash" => :build
