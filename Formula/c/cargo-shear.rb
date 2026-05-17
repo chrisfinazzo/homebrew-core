@@ -7,12 +7,12 @@ class CargoShear < Formula
   head "https://github.com/Boshen/cargo-shear.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "544c4af9b777f95a016e3d83ead598cdbcc8ac7ee43634d23b91422fdc00f438"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "6bc97fb370c768c9332147e7a9520370a3f99e9c81416c32fd7f0eaab6d2bb3d"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "86b31937188cb3a7461f7ca9c47a47ef48a9576bc4b78a1c7338e1de113adb39"
-    sha256 cellar: :any_skip_relocation, sonoma:        "a92e47e42f50c4ecba2ea13799ac15d14d82f5da17abac5a0fb183cbbe7edd9a"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "dd5c7d647da5f2490e04f6e631da1a50d5a5f92b0dab999d8abac2fe7916d311"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "f73aeec871bab3e829dfae76fd10be5f1e5dc8405c34401d7a29dd57112cda28"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "54d8079712f32fb3487be79168d947c63a35ce083720d6183e8329d1a12e7067"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "bb6c1258883b3d1275bbd85df0524255c6f8eee1af3a2985d9aa38f557e0872f"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "1c72c0da5ebad5657524689c7b4ea41de876766de9885dc489612ce5eed92bdb"
+    sha256 cellar: :any_skip_relocation, sonoma:        "bd31159569f71669dacb5beac79363fdd3254bbdb53651aafd435a995102ddac"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "c30a7704d1b1d42f32964fba4e854cca79e932ac4ec8b103e23b6d5f82e4dece"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "9a01992beaa641a97a5804a84cec40680338df99d89a5f3da764a421199db87f"
   end
 
   depends_on "rust" => :build
